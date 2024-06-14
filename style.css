@@ -12,6 +12,8 @@ body {
 :root {
     --sidebar-color: #fe6347;
     --white-color: #fff;
+    --black-color: #000;
+    --section-titl-color: #f44336;
 }
 
 .container {
@@ -19,7 +21,7 @@ body {
 }
 
 .sidebar {
-    width: 25%;
+    width: 20%;
     background: var(--sidebar-color);
     color: var(--white-color);
     height: 100vh;
@@ -28,7 +30,7 @@ body {
     left: 0;
     padding: 20px;
 }
-.sidebar h3 {
+.sidebar h2 {
     margin-top: 60px;
 }
 .sidebar nav {
@@ -45,4 +47,45 @@ body {
     font-style: normal;
     font-size: 18px;
     padding: 10px 5px;
-  }
+}
+.sidebar nav ul li a:hover {
+    color: var(--black-color);
+    transition: 0.3s ease-in-out;
+}
+
+.content {
+    width: 80%;
+    margin-left: 20%;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 50px;
+    color: var(--section-titl-color);
+    font-weight: bold;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 10px;
+    background-color: var(--section-titl-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.home .home-title {
+    margin: 100px 0px 20px 0px;
+    font-size: 70px;
+    font-weight: bold;
+}
+.home .gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.home .gallery img {
+    width: 50%;
+    padding: 10px;
+    height: auto;
+    opacity: 0.8;
+}
