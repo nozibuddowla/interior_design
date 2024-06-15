@@ -37,17 +37,13 @@
             <section class="services-container" id="services">
                 <div class="section-title">Services.</div>
                 <p>We are an interior design service that focuses on what's best for your home and what's best for you!</p>
-                <br />
                 <p>We specialize in crafting luxurious residential spaces that prioritize human comfort and environmental sustainability. Our expertly designed homes cater to the diverse needs of families, providing a harmonious co-living environment for all members. At Interior Design, our mission is to empower clients to visualize, create, and sustain exquisite living spaces. We showcase the epitome of cool and trendy luxury interiors, blending modern aesthetics with timeless elegance. Committed to excellence, we manage each project with meticulous attention to detail and adherence to the highest quality standards. Our passion for luxury interior design in Bangladesh drives us to ensure that every client is actively involved throughout the project, guaranteeing satisfaction and a personalized experience. Unsure what you receive from booking an interior designer? Do not worry. Our interior designers give you just what you need. Together we identify the process and tailor our deliverances.</p>
             </section>
             <section class="designer-container" id="designers">
                 <div class="section-title">Designers.</div>
                 <p>The best team in the world.</p>
-                <br />
                 <p>Home to so many of the industry is power players, the land of stars and stripes has mountains to offer the world when it comes to interior designers. And just like the vast, diverse country itself, the best thing about America is leading design exports is that they offer such a broad, assorted mix of iconic styles. From Mr. Michael S. Smith, whose flawless touch is witnessed in the luxurious grey living space above, to the bold and brilliant Kelly Wearstler, discover our round-up of top American interior designers. The moment a designer is work becomes instantly recognisable with one quick glance, it is a definite sign they have conquered the industry. Kelly Wearstler cracked that feat years ago, after establishing her eponymous studio which has grown from boutique interior design firm to global lifestyle brand.</p>
-
                 <p class="designer_headline">Our designers are thoughtfully chosen:</p>
-
                 <div class="designers">
                     <div class="designer">
                         <img src="./images/person-01.jpg" alt="John Doe">
@@ -66,7 +62,7 @@
                         </div>
                     </div>
                     <div class="designer">
-                        <img src="./images/person-03.jpg" alt="">
+                        <img src="./images/person-03.jpg" alt="Mike Ross">
                         <div class="contents">
                             <h3>Mike Ross</h3>
                             <p>Architect</p>
@@ -75,19 +71,10 @@
                     </div>
                 </div>
             </section>
-
-            <section  class="packages-container" id="packages">
+            <section class="packages-container" id="packages">
                 <div class="section-title">Packages.</div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sit
-                    libero delectus laborum ad magni quidem magnam eos? Amet magni
-                    possimus similique quidem aut! Consequuntur, velit. Aliquam,
-                    corporis voluptatibus. Molestiae modi quod aliquid facilis eum
-                    provident laudantium ducimus eligendi beatae inventore error
-                    officiis rerum, deleniti optio dolores repellendus magni, molestias
-                    aut?
-                  </p>
-                  <div class="package-card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sit libero delectus laborum ad magni quidem magnam eos? Amet magni possimus similique quidem aut! Consequuntur, velit. Aliquam, corporis voluptatibus. Molestiae modi quod aliquid facilis eum provident laudantium ducimus eligendi beatae inventore error officiis rerum, deleniti optio dolores repellendus magni, molestias aut?</p>
+                <div class="package-card">
                     <div class="package">
                         <h3 style="background-color: #616161">Basic</h3>
                         <ul>
@@ -96,16 +83,15 @@
                             <li>Photography</li>
                             <li>20% furniture discount</li>
                             <li>Good deals</li>
-                            
                         </ul>
                         <div class="price">
                             <p>
-                                <button id="pr-dic-btn">-</button>$<span id="price"></span>
-                                <button id="pr-inc-btn">+</button>
+                                <button class="pr-dic-btn">-</button>$<span class="price-amount">199</span>
+                                <button class="pr-inc-btn">+</button>
                             </p>
-                            <p><span id="roomNumber"></span> room</p>
+                            <p><span class="room-number">1</span> room</p>
                         </div>
-                        <div class="price-btn1">
+                        <div class="price-btn">
                             <button class="signUp">Sign Up</button>
                         </div>
                         <div class="after-signup">
@@ -113,7 +99,7 @@
                         </div>
                     </div>
                     <div class="package">
-                        <h3 style="background-color: #fe6347">Pro</h3>
+                        <h3 style="background-color: #f44336">Pro</h3>
                         <ul>
                             <li>Floorplanning</li>
                             <li>50 hours support</li>
@@ -123,19 +109,32 @@
                         </ul>
                         <div class="price">
                             <p>
-                            <button id="pr-dic-btn">-</button>$<span id="price"></span>
-                            <button id="pr-inc-btn">+</button>
+                                <button class="pr-dic-btn">-</button>$<span class="price-amount">499</span>
+                                <button class="pr-inc-btn">+</button>
                             </p>
-                            <p><span id="roomNumber"></span> room</p>
+                            <p><span class="room-number">1</span> room</p>
                         </div>
-                        <div class="price-btn2">
+                        <div class="price-btn">
                             <button class="signUp">Sign Up</button>
                         </div>
                         <div class="after-signup">
                             <!-- Thank you for choosing <span>1</span> room -->
                         </div>
                     </div>
-                  </div>
+                </div>
+            </section>
+            <section class="contact-container" id="contact">
+                <div class="section-title">Contact.</div>
+                <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
+                <form class="contact-form" action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name.." required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email.." required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write something.." required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
             </section>
         </section>
     </div>
