@@ -59,4 +59,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }`;
     afterSignUp[1].style.display = `block`;
   });
+
+  let contactForm = document.querySelector(".contact-form");
+  contactForm.addEventListener("submit", (event) => {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email".value.trim());
+    let message = document.getElementById("message".value.trim());
+
+    if (!name || !email || !message) {
+      event.preventDefault();
+      alert("All fields are required!");
+    }
+  });
 });
