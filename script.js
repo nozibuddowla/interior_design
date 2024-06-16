@@ -35,14 +35,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   priceDecrementBtn[1].addEventListener("click", () => {
-    if (basicRoomCounter > 1) {
-      basicRoomCounter -= 1;
-      updatePriceAndRooms(1, basicPackagePrice, basicRoomCounter);
+    if (proRoomCounter > 1) {
+      proRoomCounter -= 1;
+      updatePriceAndRooms(1, proPackagePrice, proRoomCounter);
     }
   });
 
   priceIncrementBtn[1].addEventListener("click", () => {
-    basicRoomCounter += 1;
-    updatePriceAndRooms(1, basicPackagePrice, basicRoomCounter);
+    proRoomCounter += 1;
+    updatePriceAndRooms(1, proPackagePrice, proRoomCounter);
+  });
+
+  signUp[0].addEventListener("click", () => {
+    afterSignUp[0].textContent = `Thank you for choosing ${basicRoomCounter} room${
+      basicRoomCounter > 1 ? "s" : ""
+    }`;
+    afterSignUp[0].style.display = `block`;
+  });
+
+  signUp[1].addEventListener("click", () => {
+    afterSignUp[1].textContent = `Thank you for choosing ${proRoomCounter} room${
+      proRoomCounter > 1 ? "s" : ""
+    }`;
+    afterSignUp[1].style.display = `block`;
   });
 });
