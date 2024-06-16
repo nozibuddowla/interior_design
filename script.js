@@ -1,79 +1,48 @@
-let price = document.querySelectorAll(".room_price");
-let priceDecrementBtn = document.querySelectorAll(".decrement_btn");
-const priceIncrementBtn = document.querySelectorAll(".increment_btn");
-const roomNumber = document.querySelectorAll(".room_number");
-const signUp = document.querySelectorAll(".signUp");
-const afterSignup = document.querySelectorAll(".after-signup");
+document.addEventListener("DOMContentLoaded", (event) => {
+  let price = document.querySelectorAll(".room_price");
+  let priceDecrementBtn = document.querySelectorAll(".decrement_btn");
+  let priceIncrementBtn = document.querySelectorAll(".increment_btn");
+  let roomNumber = document.querySelectorAll(".room_number");
+  let signUp = document.querySelectorAll(".signUp");
+  let afterSignUp = document.querySelectorAll(".after-signup");
 
-let basicPackagePrice = 199;
-let basicRoomCounter = 1;
+  const basicPackagePrice = 199;
+  const proPackagePrice = 249;
+  let basicRoomCounter = 1;
+  let proRoomCounter = 1;
 
-let proPackagePrice = 249;
-let proRoomCounter = 1;
+  price[0].textContent = basicPackagePrice;
+  price[1].textContent = proPackagePrice;
+  roomNumber[0].textContent = basicRoomCounter;
+  roomNumber[1].textContent = proRoomCounter;
 
-price[0].innerHTML = basicPackagePrice;
-price[1].innerHTML = proPackagePrice;
+  const updatePriceAndRooms = (index, pricePerRoom, roomCounter) => {
+    price[index].textContent = pricePerRoom * roomCounter;
+    roomNumber[index].textContent = roomCounter;
+    priceDecrementBtn[index].disabled = roomCounter <= 1;
+  };
 
-roomNumber[0].innerHTML = basicRoomCounter;
-roomNumber[1].innerHTML = proRoomCounter;
+  priceDecrementBtn[0].addEventListener("click", () => {
+    if (basicRoomCounter > 1) {
+      basicRoomCounter -= 1;
+      updatePriceAndRooms(0, basicPackagePrice, basicRoomCounter);
+    }
+  });
 
-if (basicPackagePrice <= 199) {
-  priceDecrementBtn[0].disabled = true;
-}
-if (proPackagePrice <= 249) {
-  priceDecrementBtn[1].disabled = true;
-}
+  priceIncrementBtn[0].addEventListener("click", () => {
+    basicRoomCounter += 1;
+    updatePriceAndRooms(0, basicPackagePrice, basicRoomCounter);
+  });
 
-priceDecrementBtn[0].addEventListener("click", () => {
-  console.log("clicked");
-  basicPackagePrice -= 199;
-  basicRoomCounter -= 1;
-  if (basicPackagePrice <= 199) {
-    priceDecrementBtn[0].disabled = true;
-  }
-  price[0].innerHTML = basicPackagePrice;
-  roomNumber[0].innerHTML = basicRoomCounter;
-});
+  priceDecrementBtn[1].addEventListener("click", () => {
+    if (basicRoomCounter > 1) {
+      basicRoomCounter -= 1;
+      updatePriceAndRooms(1, basicPackagePrice, basicRoomCounter);
+    }
+  });
 
-priceIncrementBtn[0].addEventListener("click", () => {
-  basicPackagePrice += 199;
-  basicRoomCounter += 1;
-  //   if (basicPackagePrice >= 199) {
-  //     priceDecrementBtn[0].disabled = true;
-  //   }
-  price[0].innerHTML = basicPackagePrice;
-  roomNumber[0].innerHTML = basicRoomCounter;
-});
-
-priceDecrementBtn[1].addEventListener("click", () => {
-  console.log("clicked");
-  proPackagePrice -= 249;
-  basicRoomCounter -= 1;
-  if (basicPackagePrice <= 249) {
-    priceDecrementBtn[0].disabled = true;
-  }
-  price[1].innerHTML = proPackagePrice;
-  roomNumber[1].innerHTML = basicRoomCounter;
-});
-
-priceIncrementBtn[1].addEventListener("click", () => {
-  basicPackagePrice += 249;
-  basicRoomCounter += 1;
-  //   if (basicPackagePrice >= 199) {
-  //     priceDecrementBtn[0].disabled = true;
-  //   }
-  price[1].innerHTML = proPackagePrice;
-  roomNumber[1].innerHTML = proRoomCounter;
-});
-
-signUp[0].addEventListener("click", () => {
-  afterSignup[0].style.display = "flex";
-  packageCard[0].style.height = "620px";
-  afterSignup[0].innerHTML = `Thank you for choosing ${roomCounter1} room`;
-});
-
-signUp[1].addEventListener("click", () => {
-  afterSignup[1].style.display = "flex";
-  packageCard[1].style.height = "620px";
-  afterSignup[1].innerHTML = `Thank you for choosing ${roomCounter2} room`;
+  priceIncrementBtn[1].addEventListener("click", () => {
+    basicRoomCounter += 1;
+    updatePriceAndRooms(1, basicPackagePrice, basicRoomCounter);
+  });
 });
