@@ -4,6 +4,6 @@
 
 ### Overview
 
-In this assignment, task is to create a website following the design of the `pdf` file and make it interactive.
+In this assignment, the task is to create a website that follows the design of the `pdf` file and makes it interactive.
 
 - Live Site: [Link](https://nozibuddowla.github.io/interior_design/)
